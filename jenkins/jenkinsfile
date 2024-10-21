@@ -27,5 +27,10 @@ pipeline {
                 echo 'today is monday'
             }
         }
+                        stage('test') {
+            steps {
+                echo 'here we will test the build to dockerhub'
+            }
+        }
     }
 }
