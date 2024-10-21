@@ -17,5 +17,10 @@ pipeline {
                 echo 'here we will push the build to dockerhub'
             }
         }
+                        stage('QA') {
+            steps {
+                echo 'here will QA the docker image'
+            }
+        }
     }
 }
