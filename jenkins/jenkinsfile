@@ -22,9 +22,10 @@ pipeline {
                 echo 'here will QA the docker image'
             }
         }
-                        stage('Day today    ') {
+                        stage('Day today') {
             steps {
                 echo 'today is monday'
             }
+        }
     }
 }
