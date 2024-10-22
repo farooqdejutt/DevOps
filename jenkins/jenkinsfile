@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                echo 'here we will clone the code from github'
-            }
-        }
+
                 stage('build') {
             steps {
                 echo 'here we will build the docker image'
+                script {
+                    sh 'pwd'
+                    sh 'ls -l'
+                    }
             }
         }
                 stage('push') {
