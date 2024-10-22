@@ -7,6 +7,8 @@ pipeline {
             steps {
                 echo 'here we will build the docker image'
                 script {
+
+                    sh 'cd docker'
                     sh 'pwd'
                     sh 'ls -l'
                     }
