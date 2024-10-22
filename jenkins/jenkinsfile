@@ -11,6 +11,9 @@ pipeline {
                     dir('docker') { 
                     sh 'pwd'
                     sh 'ls -l'
+                    sh 'docker images'
+                    sh 'docker build -t myjenkin-app:v1'
+                    sh 'docker images' 
                     }
                 }
             }
