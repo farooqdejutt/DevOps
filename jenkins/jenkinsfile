@@ -22,15 +22,5 @@ pipeline {
                 echo 'here will QA the docker image'
             }
         }
-                        stage('Day today') {
-            steps {
-                echo 'today is tuesday'
-            }
-        }
-                        stage('test') {
-            steps {
-                echo 'here we will test the build to dockerhub'
-            }
-        }
     }
 }
