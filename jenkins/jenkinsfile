@@ -24,7 +24,7 @@ pipeline {
         }
                         stage('Day today') {
             steps {
-                echo 'today is monday'
+                echo 'today is tuesday'
             }
         }
                         stage('test') {
