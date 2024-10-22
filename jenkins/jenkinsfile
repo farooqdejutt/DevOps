@@ -8,10 +8,11 @@ pipeline {
                 echo 'here we will build the docker image'
                 script {
 
-                    sh 'cd docker'
+                    dir('docker') { 
                     sh 'pwd'
                     sh 'ls -l'
                     }
+                }
             }
         }
                 stage('push') {
