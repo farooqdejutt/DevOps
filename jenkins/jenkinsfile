@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'slave'}
 
     stages {
 
@@ -12,7 +12,7 @@ pipeline {
                     sh 'pwd'
                     sh 'ls -l'
                     sh 'docker images'
-                    sh 'docker build -t myjenkin-app:v1'
+                    sh 'docker build -t myjenkin-app:v1 .'
                     sh 'docker images' 
                     }
                 }
