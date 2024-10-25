@@ -20,8 +20,11 @@ pipeline {
         }
                 stage('push') {
             steps {
+            withCredentials([usernamePassword(credentialsId: docker-hub, usernameVariable: 'DOCKER_HUB_USERNAME', passwordVariable: 'DOCKER_HUB_PASSWORD')]) {
                 echo 'here we will push the build to dockerhub'
+                sh 'docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD'
             }
+        }
         }
                         stage('QA') {
             steps {
