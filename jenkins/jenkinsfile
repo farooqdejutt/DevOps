@@ -23,7 +23,7 @@ pipeline {
                 script {
                     withCredentials([usernamePassword(credentialsId: "docker-hub", usernameVariable: 'DOCKER_HUB_USERNAME', passwordVariable: 'DOCKER_HUB_PASSWORD')]) {
                         sh 'docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD'
-                        sh 'docker tag farooqdevops/my-node-app:v2 myjenkin-app:v1'
+                        sh 'docker tag myjenkin-app:v1 farooqdevops/my-node-app:v2'
                         sh 'docker push farooqdevops/my-node-app:v2'
                     }
                 }
