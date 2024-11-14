@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-worker
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: nginx-w
+  template:
+    metadata:
+      labels:
+        service: nginx-w
+        app: nginx-w
+    spec:
+      containers:
+      - image: nginx
+        name: nginx-worker
+        resources:
+          limits:
+            cpu: 500m
+            memory: 512Mi
+          requests:
+            cpu: 500m
+            memory: 512Mi
+      nodeSelector:
+        farooqdev.io/role: workers-cpu
+      tolerations:
+      - key: "worker"
+        operator: "Equal"
+        value: "true"
+        effect: "NoSchedule"
